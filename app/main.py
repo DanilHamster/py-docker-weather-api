@@ -15,11 +15,9 @@ def get_weather() -> None:
     response = requests.get(URL)
     data = response.json()
 
-    print(
-        f"Weather in {CITY}: "
-        f"{data["current"]["condition"]["text"]}, "
-        f"{data["current"]["temp_c"]}°C"
-    )
+    condition = data["current"]["condition"]["text"]
+    temp = data["current"]["temp_c"]
+    print(f"Weather in {CITY}: {condition}, {temp}°C")
 
 
 if __name__ == "__main__":
